@@ -329,7 +329,7 @@ bool i2c_setbaud(I2CDriver *sd, unsigned int kbaud)
   if (kbaud == sd->speed) {
     return true;
   }
-  if ((kbaud != 100) || (kbaud != 400)) {
+  if ((kbaud != 100) && (kbaud != 400)) {
     return false;
   }
   uint8_t ch = (kbaud == 100)?'1':'4';
